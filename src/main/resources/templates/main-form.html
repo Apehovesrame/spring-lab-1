@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый студент</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        form { background: white; padding: 20px; border-radius: 8px; max-width: 400px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        p { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="number"], input[type="email"] { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        input[type="submit"], input[type="reset"] { padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
+        input[type="submit"] { background-color: #3498db; color: white; }
+        input[type="reset"] { background-color: #e74c3c; color: white; }
+    </style>
+</head>
+<body>
+<h1>Форма информации о студенте</h1>
+<form action="#" th:action="@{/form}" th:object="${student}" method="post">
+    <p>
+        <label>ID:</label>
+        <input type="text" th:field="*{id}" required />
+    </p>
+    <p>
+        <label>Фамилия:</label>
+        <input type="text" th:field="*{surname}" required />
+    </p>
+    <p>
+        <label>Имя:</label>
+        <input type="text" th:field="*{name}" required />
+    </p>
+    <p>
+        <label>Отчество:</label>
+        <input type="text" th:field="*{patronymic}" />
+    </p>
+    <p>
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required />
+    </p>
+    <p>
+        <label>Год поступления:</label>
+        <input type="number" th:field="*{enrollmentYear}" required placeholder="Например, 2023" />
+    </p>
+    <p>
+        <input type="submit" value="Отправить" />
+        <input type="reset" value="Сброс" />
+    </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Title</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; color: #333; }
+        h1 { color: #2c3e50; }
+        p { font-size: 18px; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<h1 th:text="'Текущая страница - ' + ${data} + '!'"></h1>
+<p th:text="${content}"></p>
+<hr>
+<a href="/form">Перейти к форме ввода данных студента</a><br>
+<a href="/about?name=Иван">Перейти на страницу автора (с параметром)</a>
+</body>
+</html>
